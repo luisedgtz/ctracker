@@ -1,0 +1,30 @@
+.nav-container{
+    width: 100%;
+    background-color: rgb(87, 197, 160);
+    position: fixed;
+    bottom: 0;
+    height: 10vh;
+    z-index: 1;
+}
+
+.tags{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.tags li {
+    text-decoration: none;
+    height: 100%;
+}
+
+.tags li i{
+    align-self: center;
+    font-size: 40px;
+    color: white;
+    line-height: 70px;
+    width: 100%;
+}

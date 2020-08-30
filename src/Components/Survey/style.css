@@ -1,0 +1,14 @@
+.survey-container{
+    height: 90vh;
+    text-align: center;
+}
+
+.form-container{
+    width: 90%;
+    margin: auto;
+    height: fit-content;
+}
+
+label{
+    display: inline-block;
+}
