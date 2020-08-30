@@ -13,7 +13,7 @@ import Nav from './Components/Nav/index'
 import Auth from './Components/Auth/index'
 import Survey from './Components/Survey/index'
 import Profile from './Components/myProfile/index'
-
+import firebase from 'firebase'
 
 class App extends Component {
 
@@ -25,8 +25,9 @@ class App extends Component {
   }
 
   componentDidMount(){
+
   }
-  
+
   render(){
     return (
       <div className="App"><div className="App">
@@ -41,7 +42,6 @@ class App extends Component {
         </Router>
       </div>
       </div>
-        {/* {this.state.user ? (<Home/>):(<Login/>)} */}
       </div>
     );
   }
