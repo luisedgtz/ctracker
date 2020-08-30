@@ -1,12 +1,26 @@
 .survey-container{
-    height: 90vh;
+    height: fit-content;
     text-align: center;
 }
 
-.form-container{
-    width: 90%;
+.surv-container{
+    width: 100%;
     margin: auto;
     height: fit-content;
+}
+
+.surv-container div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.surv-container button{
+    border: 0;
+    background-color: #57C5A0;
+    padding: 10px;
+    width: 40%;
+
 }
 
 label{
