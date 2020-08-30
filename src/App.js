@@ -12,6 +12,9 @@ import {
 import Auth from './Components/Auth/index'
 import app from './Components/App/index'
 import firebase from './initializer/initilizer'
+import axios from 'axios'
+
+axios.defaults.baseURL = "https://us-central1-covid-tracker-3fccb.cloudfunctions.net/api";
 
 class App extends Component {
 
@@ -28,7 +31,6 @@ class App extends Component {
 
   authListener(){
     firebase.auth().onAuthStateChanged((user)=>{
-      console.log(user);
       if(user){
         this.setState({user});
       //  localStorage.setItem('user', user.uid);

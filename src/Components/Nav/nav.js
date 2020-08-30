@@ -15,7 +15,7 @@ function nav() {
                     <i class="material-icons">map</i>
                     </NavLink>
                 </li>
-                <li><NavLink exact to="/app/auth">
+                <li><NavLink exact to="/app/profile">
                     <i className="material-icons">person</i>
                     </NavLink></li>
             </ul>

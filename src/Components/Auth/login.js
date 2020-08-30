@@ -14,7 +14,7 @@ export function Login() {
     const [pass,setPass] = useState('');
 
     const handleLogin = () =>{
-        firebase.auth.signInWithEmailAndPassword(this.state.mail,this.state.contraseña)
+        firebase.auth().signInWithEmailAndPassword(mail,pass)
         .then((user) =>{
             console.log(user)
         }

@@ -11,6 +11,7 @@ import Nav from '../Nav/index'
 import Survey from '../Survey/index'
 import Profile from '../myProfile/index'
 
+
 class Index extends React.Component{
     constructor(props){
         super(props);
