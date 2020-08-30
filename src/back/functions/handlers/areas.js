@@ -1,7 +1,9 @@
 const { db } = require('../util/admin');
 const firebase = require('firebase-admin');
 
+
 exports.postArea = (request,response)=>{
+   
     location = new firebase.firestore.GeoPoint(request.body.latitud, request.body.longitud);
 
     limit1 = new firebase.firestore.GeoPoint(request.body.latitude2, request.body.longitude2);
@@ -26,7 +28,7 @@ exports.postArea = (request,response)=>{
 }
 
 exports.getRedAreas = (request,response)=>{
-    db.collection('area').get().then(data => {
+    db.collection('area').where("ai", ">", 65).get().then(data => {
         let redAreas = [];
         data.forEach(doc => {
             redAreas.push({
@@ -43,4 +45,3 @@ exports.getRedAreas = (request,response)=>{
     console.error(error);
     })
 }
-

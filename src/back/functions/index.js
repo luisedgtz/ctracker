@@ -4,7 +4,7 @@ const { db } = require('./util/admin')
 
 const {
     postArea,
-    getRedAreas
+    getRedAreas,
 } = require('./handlers/areas');
 
 const {
@@ -19,6 +19,7 @@ const {
 //Area routes
 app.post('/area', postArea);
 app.get('/area', getRedAreas);
+
 
 //Location routes
 app.put("/location", updateLoc);
