@@ -1,5 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import firebase from './initializer/initializer'
+
 import './App.css';
 
 import {
@@ -14,9 +15,37 @@ import Auth from './Components/Auth/index'
 import Survey from './Components/Survey/index'
 import Profile from './Components/myProfile/index'
 
-function App() {
-  return (
-    <div className="App">
+
+class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+      user:{}
+    }
+  }
+
+  componentDidMount(){
+    this.authListener();
+  }
+
+
+  authListener(){
+    firebase.auth().onAuthStateChanged((user)=>{
+      console.log(user);
+      if(user){
+        this.setState({user});
+      //  localStorage.setItem('user', user.uid);
+      }else {
+        this.setState({user:null});
+      //  localStorage.removeItem('user');
+      }
+    });
+  }
+
+  render(){
+    return (
+      <div className="App"><div className="App">
       <div className="wrapper">
         <Router>
           <Nav></Nav>
@@ -27,8 +56,12 @@ function App() {
           </Switch>
         </Router>
       </div>
-    </div>
-  );
+      </div>
+        {/* {this.state.user ? (<Home/>):(<Login/>)} */}
+      </div>
+    );
+  }
+  
 }
 
 export default App;
