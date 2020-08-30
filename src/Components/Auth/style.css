@@ -1,0 +1,56 @@
+.login-container{
+    background-image: url(../../Assets/fondo.png);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.up-container{
+    background-image: url(../../Assets/fondo.png);
+    height: fit-content;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form-container{
+    width: 70%;
+    display: block;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+
+}
+
+.form-container img{
+    height: 70px;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.form-container input{
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    border: 0px;
+    border-radius: 30px;
+    padding: 20px;
+    margin-bottom: 30px;
+    outline: 0;
+}
+
+.form-container button{
+    border: 0px;
+    background-color: rgb(87, 197, 160);
+    width: 80%;
+    border-radius: 30px;
+    padding: 20px;
+    color: white;
+    outline: 0;
+    margin-bottom: 10px;
+}
+
+.form-container a{
+    color: white;
+    text-decoration: none;
+    margin-top: 100px;
+}

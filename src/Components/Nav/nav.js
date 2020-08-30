@@ -7,15 +7,15 @@ function nav() {
     return (
         <div className="nav-container">
             <ul className="tags">
-                <li><NavLink exact to="/survey">
+                <li><NavLink exact to="/app/survey">
                     <i className="material-icons">ballot</i>
                     </NavLink></li>
                 <li>
-                    <NavLink exact to="/">
+                    <NavLink exact to="/app/map">
                     <i class="material-icons">map</i>
                     </NavLink>
                 </li>
-                <li><NavLink exact to="/auth">
+                <li><NavLink exact to="/app/auth">
                     <i className="material-icons">person</i>
                     </NavLink></li>
             </ul>
