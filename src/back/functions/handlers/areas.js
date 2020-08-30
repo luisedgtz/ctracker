@@ -1,22 +1,26 @@
 const { db } = require('../util/admin');
+const firebase = require('firebase-admin');
 
 exports.postArea = (request,response)=>{
-   
-    const newArea = {
+    location = new firebase.firestore.GeoPoint(request.body.latitud, request.body.longitud);
+
+    limit1 = new firebase.firestore.GeoPoint(request.body.latitude2, request.body.longitude2);
+    limit2 = new firebase.firestore.GeoPoint(request.body.latitude3, request.body.longitude3);
+    limit3 = new firebase.firestore.GeoPoint(request.body.latitude4, request.body.longitude4);
+    limit4 = new firebase.firestore.GeoPoint(request.body.latitude5, request.body.longitude5);
+
+    db.collection('area').add(
+    {
         name: request.body.name,
         tag: request.body.tag,
-        latitud: request.body.latitud,
-        longitud: request.body.longitud,
-        limits: request.body.limits,
-        AI: request.body.ai,
-    };
+        location: location,
+        limits: [limit1,limit2,limit3,limit4],
+        ai: request.body.ai
 
-    db.collection('area').add(newArea).then((doc) =>{
-        const resArea = newArea;
-        resArea.areaId = doc.id;
-        response.json(resArea);
+    }).then((doc) =>{
+        response.json(`Doc: ${doc.id} created succesfully`);
     }).catch((error) =>{
-        response.status(500).json({error: 'Something went wrong creating a new area'});
+        response.status(500).json({error: error});
         console.error(error);
     })
 }
